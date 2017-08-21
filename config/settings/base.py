@@ -55,7 +55,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     # custom users app
     'appcourse.users.apps.UsersConfig',
-    # Your stuff: custom apps go here
+    # core
+    'appcourse.core',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -123,7 +124,7 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 TIME_ZONE = 'America/Campo_Grande'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
