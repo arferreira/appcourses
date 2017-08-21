@@ -1,5 +1,14 @@
 from django.db import models
 
+# manager for Course
+class CourseManager(models.Manager):
+
+    def search(self, query):
+        return self.get_queryset().filter(
+            models.Q(title__icontains=query) | models.Q(description__icontains=query)
+        )
+
+
 class Course(models.Model):
     # definições do modelo
     title = models.CharField(blank=True, max_length=100, verbose_name='Título')
@@ -10,3 +19,5 @@ class Course(models.Model):
                               null=True, blank=True, verbose_name='Imagem')
     created_at = models.DateTimeField(verbose_name='Criado em', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='Atualizado em', auto_now=True)
+
+    objects = CourseManager()
