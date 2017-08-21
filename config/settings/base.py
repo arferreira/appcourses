@@ -57,6 +57,8 @@ LOCAL_APPS = [
     'appcourse.users.apps.UsersConfig',
     # core
     'appcourse.core',
+    # course
+    'appcourse.courses',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
