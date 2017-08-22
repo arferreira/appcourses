@@ -21,7 +21,11 @@ def course_detail(request, pk):
 
 def course_detail(request, slug):
     course = get_object_or_404(Course, slug=slug)
-    form = ContactCourse()
+    if request.method == 'POST':
+        form = ContactCourse(request.POST)
+    else:
+        form = ContactCourse()
+
     context = {
         'course': course,
         'form': form,
