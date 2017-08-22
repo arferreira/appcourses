@@ -27,7 +27,8 @@ urlpatterns = [
 
     # Courses
     url(r'^cursos/$', courses_view, name='courses'),
-    url(r'^cursos/detalhes/(?P<pk>\d+)/$', course_detail, name='course_detail')
+    #url(r'^cursos/detalhes/(?P<pk>\d+)/$', course_detail, name='course_detail'),
+    url(r'^cursos/detalhes/(?P<slug>[\w_-]+)/$', course_detail, name='course_detail'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

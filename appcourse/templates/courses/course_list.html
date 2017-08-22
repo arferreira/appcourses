@@ -14,7 +14,7 @@
     </div>
     <br>
     <div class="col-sm-8">
-      <h4><strong><a href="{% url 'course_detail'  course.pk  %}">{{ course.title }}</a></strong></h4>
+      <h4><strong><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></strong></h4>
       <p>{{ course.description|linebreaks }}</p>
     </div>
   </div>
