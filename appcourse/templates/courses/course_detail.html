@@ -19,5 +19,28 @@
         <p>{{ course.about|linebreaks }}</p>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Dúvidas e sugestões?</h4>
+        <hr>
+        <form class="" action="" method="post">
+          {% csrf_token %}
+          <fieldset>
+            {% for field in form %}
+              <div class="form-control">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                  <ul class="errors">
+                    {{ field.errors }}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </fieldset>
+        <input type="submit" class="btn btn-success" name="" value="Enviar">
+        </form>
+      </div>
+    </div>
   </div>
 {% endblock %}
