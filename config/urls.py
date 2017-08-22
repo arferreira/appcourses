@@ -7,7 +7,9 @@ from django.views import defaults as default_views
 
 # core home
 from appcourse.core.views import home
-
+# courses
+from appcourse.courses.views import courses as courses_view
+from appcourse.courses.views import course_detail
 
 urlpatterns = [
 
@@ -22,6 +24,10 @@ urlpatterns = [
 
     # Core home
     url(r'^$', home, name='home'),
+
+    # Courses
+    url(r'^cursos/$', courses_view, name='courses'),
+    url(r'^cursos/detalhes/(?P<pk>\d+)/$', course_detail, name='course_detail')
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
